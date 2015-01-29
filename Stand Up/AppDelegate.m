@@ -48,6 +48,7 @@
     doneAlert.informativeText = @"This app will close now.";
     
     [doneAlert runModal];
+    [NSApp terminate:self];
 
 }
 

@@ -13,7 +13,4 @@
 #define STAND_UP_FIRST_MINUTE 0
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
-
 @end
-
