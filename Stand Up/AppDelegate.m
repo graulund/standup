@@ -17,7 +17,9 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    
+    // First, clear all past notifications.
+    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
     
     // Create a new local notification
     NSUserNotification *notification = [[NSUserNotification alloc] init];
@@ -38,6 +40,14 @@
     
     // Get the default notification center and schedule delivery
     [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+    
+    // Notify the user that we're done
+    NSAlert *doneAlert = [[NSAlert alloc] init];
+    doneAlert.alertStyle = NSInformationalAlertStyle;
+    doneAlert.messageText = @"Done setting up the \"Stand Up\" recurring notification";
+    doneAlert.informativeText = @"This app will close now.";
+    
+    [doneAlert runModal];
 
 }
 
